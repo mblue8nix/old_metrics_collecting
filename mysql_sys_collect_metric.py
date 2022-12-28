@@ -341,7 +341,7 @@ Tons of data
 
 def table_statistics():
     table_statistics_sql ="""
-SELECT table_schema,
+  SELECT table_schema,
               table_name,
               rows_fetched,
               fetch_latency,
@@ -355,7 +355,7 @@ FROM sys.x$schema_table_statistics
 WHERE table_schema NOT IN ( 
     'mysql',
     'performance_schema',
-    'sys',
+    'sys')
 AND rows_inserted + rows_updated <> '0';
 """
 
