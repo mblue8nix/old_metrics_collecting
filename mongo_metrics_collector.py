@@ -34,7 +34,7 @@ __split_hostname__ = __mongo_host__.split('.'[0])
 __prefix__ = __split_hostname__[1]
 __metric_name__ = ' servers.'+__prefix__+'.'
 {%- if config.authorization == 'enabled' %}
-__urifoo__  = "mongodb://nagios:{{ mon_pw }}@localhost"   # for salt
+__urifoo__  = "mongodb://USER_NAME:{{ user_pw }}@localhost"   
 __connect__ = MongoClient(__urifoo__)
 {% else %}
 __connect__ = MongoClient()
